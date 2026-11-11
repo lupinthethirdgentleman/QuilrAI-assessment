@@ -1,0 +1,32 @@
+{
+  "name": "quilr-sa-assessment",
+  "version": "1.0.0",
+  "description": "QuilrAI Solution Architect assessment: MCP server, MCP security gateway, LLM streaming guardrail, rate-limiting model router",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "task1": "tsx src/task1-mcp-server/server.ts",
+    "task1:inspect": "npx @modelcontextprotocol/inspector tsx src/task1-mcp-server/server.ts",
+    "task2:mock": "tsx src/task2-mcp-gateway/mock-mcp-server.ts",
+    "task2": "tsx src/task2-mcp-gateway/gateway.ts",
+    "task2:token": "tsx src/task2-mcp-gateway/mint-token.ts",
+    "task3:mock": "tsx src/task3-llm-gateway/mock-llm.ts",
+    "task3": "tsx src/task3-llm-gateway/gateway.ts",
+    "task4:mock": "tsx src/task4-model-router/mock-providers.ts",
+    "task4": "tsx src/task4-model-router/server.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test --test-concurrency=1 \"test/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
